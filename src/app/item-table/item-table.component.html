@@ -1,0 +1,15 @@
+<div 
+    class="container"
+    [ngClass]="{'primary': profileTable.tinhtrang }"
+>
+    <div class="image">
+        <img src="icon-table.png" alt="">
+    </div>
+    <p class="name-table">{{profileTable.tenban}}</p>
+    @if (profileTable.loaiban == 0) {
+        <p class="category-table">Bida lỗ</p>
+    } @else {
+        <p class="category-table">Bida băng</p>
+    }
+    <p class="price-table">Giá: {{ profileTable.giathue | currency:'VND' }}</p>
+</div>

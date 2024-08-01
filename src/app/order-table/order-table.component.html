@@ -1,0 +1,30 @@
+<div class="container">
+    <form action="#">
+        <h1>Chi Tiết Đặt Bàn</h1>
+        <div class="frm-input">
+            <label for="nameKH">Tên Khách Hàng: </label>
+            <input type="text" name="nameKH" id="nameKH" [(ngModel)]="datBan.tenkh">
+        </div>
+        <div class="frm-input">
+            <label for="sdtKH">Số Điện Thoại: </label>
+            <input type="tel" name="sdtKH" autocomplete="off" id="sdtKH" [(ngModel)]="datBan.sdt">
+        </div>
+        <div class="frm-input">
+            <label for="maBan">Mã Bàn: </label>
+            <input type="text" name="maBan" id="maBan" readonly>
+        </div>
+        <div class="frm-input">
+            <label for="GhiChu">Ghi Chú: </label>
+            <input type="text" name="GhiChu" id="GhiChu" [(ngModel)]="datBan.ghichu">
+        </div>
+        <div class="frm-input">
+            <label for="timeCheckIn">Thời Gian Đến: </label>
+            <input type="datetime-local" name="timeCheckIn" id="timeCheckIn" [(ngModel)]="datBan.thoigianden">
+        </div>
+        <div class="frm-input active">
+            <input (click)="handleOrderTable()" type="submit" name="ĐẶT" id="submit" value="ĐẶT">
+            <input (click)="sendIsCloseFrm()" type="submit" name="THOÁT" style="background-color: #001d40;" id="close"
+                value="Thoát">
+        </div>
+    </form>
+</div>

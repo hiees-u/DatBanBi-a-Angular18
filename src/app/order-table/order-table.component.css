@@ -1,0 +1,62 @@
+/* .container {
+    width: 50vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.container h1 {    
+  text-align: center;
+  font-size: 52px;
+  font-family: math;
+  color: #02295a;
+  margin: 0;
+  font-style: italic;
+}
+
+.frm-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.frm-input {
+    font-style: italic;
+    font-family: monospace;
+    color: #000;
+}
+
+.frm-input input {
+    width: 65%;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    padding: 5px;
+    background-color: #4d4c4c7a;
+}
+
+.active {
+    justify-content: space-around;
+}
+
+.active input {
+    height: auto;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    width: 35%;
+    color: #fff;
+    background-color: #006aff;
+}
+
+form {
+    width: 50vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

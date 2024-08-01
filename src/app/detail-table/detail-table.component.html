@@ -1,0 +1,60 @@
+@if(profileTable !== undefined) {
+    <div [ngClass]="{'show': isShow, 'hiden': !isShow}" class="container">
+        <div class="header">
+            <h1>Thông Tin Chi Tiết</h1>
+        </div>
+        <div class="content-box">
+            <label for="maBan">Mã Bàn: </label>
+            <input type="text" name="maBan" id="maBan" placeholder={{profileTable.maban}} readonly>
+        </div>
+        <div class="content-box">
+            <label for="tenban">Tên Bàn: </label>
+            <input type="text" name="tenban" id="tenban" placeholder={{profileTable.tenban}} readonly>
+        </div>
+        <div class="content-box">
+            <label for="loaiban">Loại Bàn: </label>
+            @if (profileTable.loaiban == 0) {
+            <input type="text" name="loaiban" id="loaiban" placeholder="Bida Lỗ" readonly>
+            } @else {
+            <input type="text" name="loaiban" id="loaiban" placeholder="Bida Băng" readonly>
+            }
+        </div>
+        <div class="content-box">
+            <label for="khuvuc">Khu Vực: </label>
+            <input type="text" name="khuvuc" id="khuvuc" placeholder={{profileTable.khuvuc}} readonly>
+        </div>
+        <div class="content-box">
+            <label for="tinhtrang">Trình Trạng: </label>
+            @if (profileTable.tinhtrang == 0) {
+            <input type="text" name="tinhtrang" id="tinhtrang" placeholder="Trống" readonly>
+            } @else {
+            <input type="text" name="tinhtrang" id="tinhtrang" placeholder="Đang Có Người Đặt" readonly>
+            }
+        </div>
+        <div class="content-box">
+            <label for="giathue">Giá Thuê: </label>
+            <input type="text" name="giathue" id="giathue" placeholder="{{ profileTable.giathue | currency:'VND' }}" readonly>
+        </div>
+
+        <button (click)="changeShow()" class="showHiden">
+            @if(!isShow) {
+                <i class="fa-solid fa-angles-left"></i>
+            } @else { 
+                <i class="fa-solid fa-angles-right"></i>
+            }
+        </button>
+
+        <button 
+            [ngClass]="{'active': profileTable.tinhtrang }" 
+            class="ThueBtn"
+            (click)="showForm()"
+            [disabled]="profileTable.tinhtrang != 0"            
+        >
+            ĐẶT BÀN
+        </button>
+    </div>
+
+    <div class="order-table-form"  [ngClass]="{'showFrm': !isShowFrm}">
+        <app-order-table [profileTable]="profileTable" (isCloseFrm)="receiveIsCloseFrm($event)"></app-order-table>
+    </div>
+}

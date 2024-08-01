@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="container-filter">
+        <label for="CateTable">Loại Bàn: </label>
+        <select name="CateTable" id="CateTable" 
+        (change)="changeCateTable($event)">
+            @for (cateT of categoryTables; track cateT.MaLoai) {
+            <option value={{cateT.MaLoai}}>
+                {{cateT.TenLoai}}
+            </option>
+            }
+        </select>
+    </div>
+    <div class="container-lst">
+        @if (SelectCategoryTables == 0) {
+            <div class="content" *ngFor="let table of tables ; let i = index">
+                <app-item-table class="animation" (click)="changetaler(table)" [profileTable]="table"></app-item-table>
+            </div>
+        } @else {
+            <div class="content" *ngFor="let table of tablesShow ; let i = index">
+                <app-item-table class="animation" (click)="changetaler(table)" [profileTable]="table"></app-item-table>
+            </div>
+        }
+
+    </div>
+    <div class="container-Detail">
+        <app-detail-table [profileTable]="tableDetail"></app-detail-table>
+    </div>
+</div>

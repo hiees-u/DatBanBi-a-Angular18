@@ -1,0 +1,56 @@
+.container-lst {
+    width: 1710px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto;
+}
+
+.content {
+    width: fit-content;
+    padding: 10px;
+}
+
+.container-Detail {
+    width: 500px;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.container-filter {
+    margin: 10px 0 10px 80%;
+    float: right;
+    height: 50px;
+    width: 20%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-filter label {
+    font-size: 26px;
+    font-family: monospace;
+}
+
+.container-filter select {
+    padding: 10px;
+    font-size: 20px;
+    height: 100%;
+}
+
+.animation {
+    animation: animation_ 3.5s ease;
+    opacity: 1;
+}
+
+@keyframes animation_ {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
